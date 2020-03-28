@@ -12,7 +12,7 @@
   (page USLetter)
   (title_block
     (title Clock_MiniM4)
-    (date 2020-03-27)
+    (date 2020-03-28)
     (rev v01)
     (company "Cedar Grove Studios")
   )
@@ -297,7 +297,8 @@
       (net 11 /5V_SDA))
     (pad 4 thru_hole circle (at -2.54 -22.86) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask)
       (net 9 /USB))
-    (pad 5 thru_hole circle (at -5.08 -22.86) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask))
+    (pad 5 thru_hole circle (at -5.08 -22.86) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask)
+      (net 9 /USB))
     (pad 3 thru_hole circle (at 0 -22.86) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask)
       (net 1 GND))
     (model "C:/Program Files/KiCad/share/kicad/packages3d/Adafruit_CAD_Parts-master/878 7-segment display backpack/878 7-segment display backpack.step"

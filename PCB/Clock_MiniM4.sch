@@ -6,7 +6,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Clock_MiniM4"
-Date "2020-03-27"
+Date "2020-03-28"
 Rev "v01"
 Comp "Cedar Grove Studios"
 Comment1 ""
@@ -16,7 +16,7 @@ Comment4 ""
 $EndDescr
 Text Label 2200 2075 0    50   ~ 0
 3V
-Text Label 7625 4475 0    50   ~ 0
+Text Label 7725 4475 0    50   ~ 0
 USB
 Text Label 4225 3475 0    50   ~ 0
 SDA
@@ -1774,7 +1774,7 @@ Wire Wire Line
 	7525 5275 7525 5375
 Connection ~ 6225 5275
 Wire Wire Line
-	7625 4475 7625 4775
+	7725 4475 7725 4775
 $Comp
 L Adafruit:1.2-inch_7-segment_LED_HT16K33_backpack U1
 U 1 1 5E7D119A
@@ -1786,12 +1786,6 @@ F 3 "" H 7550 5800 50  0001 C CNN
 	1    7525 5875
 	1    0    0    -1  
 $EndComp
-NoConn ~ 7725 5375
-Wire Wire Line
-	6125 4775 7625 4775
-Connection ~ 7625 4775
-Wire Wire Line
-	7625 4775 7625 5375
 NoConn ~ 6125 5175
 NoConn ~ 6125 5075
 NoConn ~ 5125 5175
@@ -1841,4 +1835,16 @@ Wire Wire Line
 	4650 1300 5350 1300
 Wire Wire Line
 	3775 2575 4650 2575
+Wire Wire Line
+	7725 5375 7725 5275
+Connection ~ 7725 4775
+Wire Wire Line
+	7625 5275 7725 5275
+Wire Wire Line
+	7625 5275 7625 5375
+Connection ~ 7725 5275
+Wire Wire Line
+	7725 5275 7725 4775
+Wire Wire Line
+	6125 4775 7725 4775
 $EndSCHEMATC
