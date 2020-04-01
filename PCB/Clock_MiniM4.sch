@@ -6,7 +6,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Clock_MiniM4"
-Date "2020-03-28"
+Date "2020-03-31"
 Rev "v01"
 Comp "Cedar Grove Studios"
 Comment1 ""
@@ -1847,4 +1847,77 @@ Wire Wire Line
 	7725 5275 7725 4775
 Wire Wire Line
 	6125 4775 7725 4775
+$Comp
+L Adafruit:14-segment_alphanum_LED_FeatherWing U?
+U 1 1 5E842ECF
+P 9425 5875
+F 0 "U?" H 9425 5425 50  0000 L CNN
+F 1 "14-segment_alphanum_LED_FeatherWing" H 8650 5500 50  0000 L CNN
+F 2 "Adafruit:Adafruit_Feather_M4_Express_bare" H 9450 5800 50  0001 C CNN
+F 3 "" H 9450 5800 50  0001 C CNN
+	1    9425 5875
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E8432A7
+P 9575 5150
+F 0 "#PWR?" H 9575 5000 50  0001 C CNN
+F 1 "+3.3V" H 9590 5323 50  0000 C CNN
+F 2 "" H 9575 5150 50  0001 C CNN
+F 3 "" H 9575 5150 50  0001 C CNN
+	1    9575 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9575 5375 9575 5150
+$Comp
+L power:GND #PWR?
+U 1 1 5E8444C5
+P 9800 5350
+F 0 "#PWR?" H 9800 5100 50  0001 C CNN
+F 1 "GND" H 9805 5177 50  0000 C CNN
+F 2 "" H 9800 5350 50  0001 C CNN
+F 3 "" H 9800 5350 50  0001 C CNN
+	1    9800 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 5350 9800 5300
+Text Label 8950 5050 0    50   ~ 0
+SDA
+Text Label 8950 5150 0    50   ~ 0
+SCL
+Wire Wire Line
+	9475 5375 9475 5300
+Wire Wire Line
+	9475 5300 9800 5300
+Wire Wire Line
+	9375 5375 9375 5050
+Wire Wire Line
+	9275 5150 9275 5375
+Wire Wire Line
+	8950 5050 9375 5050
+Wire Wire Line
+	8950 5150 9275 5150
+Wire Notes Line
+	8450 6400 8450 4350
+Wire Notes Line
+	8450 4350 4900 4350
+Wire Notes Line
+	4900 4350 4900 6400
+Wire Notes Line
+	4900 6400 8450 6400
+Text Notes 4950 6350 0    50   ~ 0
+7-Segment Numeric LED Display
+Wire Notes Line
+	8600 4350 8600 6400
+Wire Notes Line
+	8600 6400 10250 6400
+Wire Notes Line
+	10250 6400 10250 4350
+Wire Notes Line
+	10250 4350 8600 4350
+Text Notes 8675 4475 0    50   ~ 0
+14-Segment Alphanumeric LED Display
 $EndSCHEMATC
