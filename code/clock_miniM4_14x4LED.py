@@ -12,16 +12,10 @@ import adafruit_ds3231
 from   analogio import AnalogIn
 from   cedargrove_unit_converter.chronos           import adjust_dst
 from   cedargrove_clock_builder.repl_display       import ReplDisplay
-# from   cedargrove_clock_builder.pybadge_display    import PyBadgeDisplay  # PyBadge display
 from   cedargrove_clock_builder.led_14x4_display   import Led14x4Display  # 14-segment LED
-# from   cedargrove_clock_builder.led_7x4_display    import Led7x4Display   # 7-segment LED
-# from   cedargrove_clock_builder.bigled_7x4_display import BigLed7x4Display   # 7-segment LED
 
 i2c = board.I2C()
 ds3231 = adafruit_ds3231.DS3231(i2c)
-
-# PyBadge battery monitor
-# batt = AnalogIn(board.A6)
 
 # Feather M4 battery monitor and piezo
 batt = AnalogIn(board.VOLTAGE_MONITOR)
@@ -48,19 +42,6 @@ clock_tick     = True       # One-second tick sound
 led_disp = Led14x4Display(clock_zone, clock_24_hour, clock_auto_dst,
                           clock_sound, brightness=0.5, debug=False)
 
-"""#  4-digit 7-segment LED alphanumeric display
-led_disp  = Led7x4Display(clock_zone, clock_24_hour, clock_auto_dst,
-                          clock_sound, brightness=1.0, debug=False)"""
-
-"""#  4-digit 7-segment LED alphanumeric display
-led_disp  = BigLed7x4Display(clock_zone, clock_24_hour, clock_auto_dst,
-                          clock_sound, brightness=1.0, debug=False)"""
-
-"""# PyBadge display
-pybadge_disp  = PyBadgeDisplay(clock_zone, clock_24_hour, clock_auto_dst,
-                               clock_sound, brightness=0.5, debug=False
-# pybadge_disp.battery = (batt.value / 65520) * 6.6"""
-
 #  REPL display
 repl_disp = ReplDisplay(clock_zone, clock_24_hour, clock_auto_dst,
                         clock_sound, debug=False)
@@ -78,10 +59,6 @@ if ds3231.lost_power:
     print("--RTC POWER FAILURE--")
     # Set time with REPL
     # ds3231.datetime = repl_disp.set_datetime()
-
-    # Set time with PyBadge
-    pybadge_disp.show(ds3231.datetime)
-    pybadge_disp.message = "-RTC POWER FAILURE-"
 
     # Set time with LED with rotary encoder
     led_disp.message = "FAIL"
