@@ -74,10 +74,6 @@ else:
     current = ds3231.datetime  # otherwise, just read the RTC
     is_dst = False
 
-if "pybadge" in clock_display:
-    pybadge_disp.dst = is_dst
-    pybadge_disp.show(current)
-
 if "led" or "big_led" in clock_display:
     if "led" in clock_display:
         led_disp.message = "CG MiniM4L CLOCK"
@@ -117,20 +113,7 @@ while True:
         pixel[0] = (r, g, b)
         pixel.write()
 
-    if "pybadge" in clock_display:
-        pybadge_disp.colon  = not pybadge_disp.colon  # auto-refresh
-
-        # Check to see if time was set
-        new_xst_datetime, clock_sound, update_flag = pybadge_disp.set_datetime(ds3231.datetime)
-        if update_flag:  # If so, update RTC Std Time with new datetime
-           ds3231.datetime = new_xst_datetime
-           print("RTC time was set")
-
     # play tick sound
-    if "pybadge" in clock_display:
-        if clock_sound and clock_tick:
-            pybadge_disp.tick()
-
     if "led" or "big_led" in clock_display:
         if clock_sound and clock_tick:
             led_disp.tick()
@@ -141,12 +124,6 @@ while True:
         print("every MIN")
 
         print("Battery: {:01.2f} volts".format((batt.value / 65520) * 6.6))
-
-        # update PyBadge display
-        if "pybadge" in clock_display:
-            pybadge_disp.dst = is_dst
-            pybadge_disp.show(current)
-            pybadge_disp.battery = (batt.value / 65520) * 6.6
 
         # Display date on LED display
         if "led" or "big_led" in clock_display:
